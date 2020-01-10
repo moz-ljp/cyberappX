@@ -11,4 +11,16 @@
     "question": "Is Hashing reversible?",
     "answers": ["No", "Yes"]
   },
+  {
+    "question": "Is having open ports safe?",
+    "answers": ["No", "Yes"],
+  },
+  {
+    "question": "Does SNMP v1 use encryption?",
+    "answers": ["No", "Yes"],
+  },
+  {
+    "question": "Which is most suitable for pen-testing?",
+    "answers": ["Kali", "Windows"],
+  },
 ]
