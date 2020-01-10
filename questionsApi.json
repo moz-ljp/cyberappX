@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is a CPU",
+    "answers": [ "Performs the FDE cycle", "Is the brain of a computer" ]
+  },
+  {
+    "question": "What does RAM stand for",
+    "answers": [ "Random Access Memory", "Rarely Accessible Memory" ]
+  },
+  {
+    "question": "What does ROM stand for",
+    "answers": ["Read only memory", "Response Open Memory"]
+  },
+]
