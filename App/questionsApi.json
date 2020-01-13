@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Which is Secure?",
+    "answers": [ "HTTPS", "HTTP" ]
+  },
+  {
+    "question": "Why do we use encryption?",
+    "answers": [ "Security", "Speed" ]
+  },
+  {
+    "question": "Is Hashing reversible?",
+    "answers": [ "No", "Yes" ]
+  },
+]
