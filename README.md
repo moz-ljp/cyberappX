@@ -13,3 +13,8 @@
 <h3>►Teams</h3>
 <h3>►Question creation</h3>
 <h3>►Integrated elements for students with colour blindness</h3>
+
+<h2>Client and Potential Users</h2>
+
+<h3>Our client is S.Whorton and at an extension, UTC Sheffield OLP.</h3>
+<h3>Our potential users include teachers and students from primary schools and potentially visitors to secondary schools.</h3>
