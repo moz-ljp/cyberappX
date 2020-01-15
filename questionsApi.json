@@ -13,14 +13,14 @@
   },
   {
     "question": "Is having open ports safe?",
-    "answers": ["No", "Yes"],
+    "answers": ["No", "Yes"]
   },
   {
     "question": "Does SNMP v1 use encryption?",
-    "answers": ["No", "Yes"],
+    "answers": ["No", "Yes"]
   },
   {
     "question": "Which is most suitable for pen-testing?",
-    "answers": ["Kali", "Windows"],
+    "answers": ["Kali", "Windows"]
   },
 ]
