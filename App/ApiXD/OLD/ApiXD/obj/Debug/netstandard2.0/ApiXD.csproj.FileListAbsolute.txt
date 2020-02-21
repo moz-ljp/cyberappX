@@ -1,0 +1,13 @@
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\bin\Debug\netstandard2.0\ApiXD.deps.json
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\bin\Debug\netstandard2.0\ApiXD.dll
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\bin\Debug\netstandard2.0\ref\ApiXD.dll
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\bin\Debug\netstandard2.0\ApiXD.pdb
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ApiXD.csprojAssemblyReference.cache
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ApiXD.AssemblyInfoInputs.cache
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ApiXD.AssemblyInfo.cs
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ApiXD.dll
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ref\ApiXD.dll
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ApiXD.pdb
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\XamlC.stamp

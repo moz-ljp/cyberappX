@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ApiXD.MainPage" BackgroundColor="White">
+             x:Class="ApiXD.MainPage" BackgroundColor="#3d3a3c">
 
     <StackLayout>
         <!-- Place new controls here -->
@@ -14,11 +14,11 @@
 
             <Label Text=""
                x:Name="responselabel"
-               TextColor="Black"
-               BackgroundColor="White"
+               TextColor="White"
                FontSize="30"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="StartAndExpand"
+                   
                
                ></Label>
 
@@ -57,22 +57,64 @@
         </StackLayout>
 
 
-        <StackLayout x:Name="cboptions">
+        <Grid x:Name="cboptions">
 
             <Label
                 
                 Text="Deuteranomaly"
-                
+                TextColor="White"
+                HorizontalTextAlignment="Start"
                 >
 
             </Label>
+            
+
+            <Label
+                
+                Text="Tritanomaly"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                >
+
+            </Label>
+            
+
+            <Label
+                
+                Text="Protanomaly"
+                TextColor="White"
+                HorizontalTextAlignment="End"
+                >
+
+            </Label>
+            
+
+        </Grid>
+
+        <Grid x:Name="cboptionslower">
+
             <CheckBox
                 
                 CheckedChanged="deuterchecked"
-                
+                x:Name="deuterBox"
+                HorizontalOptions="Start"
                 ></CheckBox>
 
-        </StackLayout>
+        <CheckBox
+                
+                CheckedChanged="tritchecked"
+            x:Name="tritBox"
+                HorizontalOptions="Center"
+                ></CheckBox>
+
+        <CheckBox
+                
+                CheckedChanged="protachecked"
+            x:Name="protBox"
+                HorizontalOptions="End"
+                ></CheckBox>
+
+        </Grid>
 
         <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
 
@@ -82,12 +124,54 @@
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="EndAndExpand"
+                   TextColor="Lime"
                    >
 
             </Label>
 
         </StackLayout>
 
+        <Label x:Name="usernameLabel"
+               Text="User"
+               HorizontalTextAlignment="Center"
+               TextColor="White"
+               FontSize="20"
+               ></Label>
+
+        <FlexLayout HorizontalOptions="CenterAndExpand">
+            <Button 
+           
+            Clicked="loginButton"
+            Text="Login"
+                HorizontalOptions="Center"
+            BackgroundColor="White"
+                TextColor="Black"
+                Margin="15"
+            >
+            
+        </Button>
+
+        <Button
+            
+            Clicked="leaderboardButton"
+            Text="Leaderboard"
+            HorizontalOptions="Center"
+            BackgroundColor="White"
+                TextColor="Black"
+            Margin="15"
+            ></Button>
+            <Button
+             x:Name="logoutButton"
+             Clicked="logoutButton_Clicked"
+                Text="Log Out"
+                HorizontalOptions="Center"
+                BackgroundColor="White"
+                TextColor="Black"
+                Margin="15"
+             ></Button>
+             
+        </FlexLayout>
     </StackLayout>
+
 
 </ContentPage>

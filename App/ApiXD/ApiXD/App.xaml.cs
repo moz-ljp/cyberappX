@@ -10,7 +10,7 @@ namespace ApiXD
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainPage(String.Empty, false, String.Empty, 0);
         }
 
         protected override void OnStart()

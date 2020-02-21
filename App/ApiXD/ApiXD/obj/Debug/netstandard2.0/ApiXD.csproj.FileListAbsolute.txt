@@ -10,4 +10,6 @@ D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ApiXD.Ass
 D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ApiXD.dll
 D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ref\ApiXD.dll
 D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\ApiXD.pdb
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
 D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\XamlC.stamp
+D:\College\IT\APIXamarainXD\ApiXD\ApiXD\ApiXD\obj\Debug\netstandard2.0\leaderboard.xaml.g.cs

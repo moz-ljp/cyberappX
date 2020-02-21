@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Newtonsoft.Json;
+using System.Net.Http;
+using Firebase.Database;
+using Firebase.Database.Query;
 
 namespace ApiXD
 {
@@ -18,6 +21,8 @@ namespace ApiXD
 
     public partial class MainPage : ContentPage
     {
+
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
 
         string correctAnswer;
 
@@ -33,17 +38,43 @@ namespace ApiXD
 
         bool deuter = false;
 
+        bool trit = false;
+
+        bool prot = false;
+
+        string[] usernames = new string[] { "Color.blue",  };
+
+        int type = 0;
+
         int count = 0;
 
-        public MainPage()
+        bool masterLogged = false;
+
+        string masterPass = "";
+
+        public string thisusername = "";
+
+        public MainPage(string username, bool loggedIn, string password, int initscore)
         {
             InitializeComponent();
+            if(username != null)
+            {
+                setUser(username);
+            }
+
+            masterLogged = loggedIn;
+            masterPass = password;
+            score = initscore;
+            counterLabel.Text = initscore.ToString();
+            
         }
 
         public JArray requestAPI()
         {
-            var request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/moz-ljp/cyberappX/master/questionsApi.json");
-            //var request = (HttpWebRequest)WebRequest.Create("view-source:http://icyber.ml/questionsApi.json"); 
+
+            //var request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/moz-ljp/cyberappX/master/questionsApi.json"); -request  from github
+            var request = (HttpWebRequest)WebRequest.Create("https://firebasestorage.googleapis.com/v0/b/cyberapp-b2823.appspot.com/o/questionsApi.json?alt=media&token=8f4ce7b8-ec37-44e3-8c4d-297001f3b644"); //request from firebase
+            //var request = (HttpWebRequest)WebRequest.Create("https://moz-ljp.github.io/cyberappX/questionsApi.json"); -request from github website
             request.Method = "GET";
             request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";
             request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
@@ -74,6 +105,8 @@ namespace ApiXD
 
             //responselabel.Text = responsetext;
             return releases;
+            
+
         }
 
         /*
@@ -98,7 +131,7 @@ namespace ApiXD
 
     */
 
-        private void btnOneClicked(object sender, EventArgs e)
+        async void btnOneClicked(object sender, EventArgs e)
         {
             string thisanswer = btnOne.Text;
 
@@ -110,14 +143,18 @@ namespace ApiXD
                     resultLabel.Text = "Correct";
                     if (deuter == true)
                     {
-                        resultLabel.TextColor = Color.Blue;
+                        resultLabel.TextColor = Color.Cyan;
                     }
                     else
                     {
-                        resultLabel.TextColor = Color.Green;
+                        resultLabel.TextColor = Color.Lime;
 
                     }
                     score += 1;
+                    incScore();
+                    counterLabel.Text = score.ToString();
+                    await counterLabel.TranslateTo(0, -20, 1000, Easing.BounceIn);
+                    await counterLabel.TranslateTo(0, 0, 1000, Easing.Linear);
                 }
                 else
                 {
@@ -131,7 +168,7 @@ namespace ApiXD
 
         }
 
-        private void btnTwoClicked(object sender, EventArgs e)
+        async void btnTwoClicked(object sender, EventArgs e)
         {
 
             string thisanswer = btnTwo.Text;
@@ -143,18 +180,22 @@ namespace ApiXD
                     resultLabel.Text = "Correct";
                     if(deuter == true)
                     {
-                        resultLabel.TextColor = Color.Blue;
+                        resultLabel.TextColor = Color.Cyan;
                     }
                     else
                     {
-                        resultLabel.TextColor = Color.Green;
+                        resultLabel.TextColor = Color.Lime;
 
                     }
                     score += 1;
+                    incScore();
+                    counterLabel.Text = score.ToString();
+                    await counterLabel.TranslateTo(0, -20, 1000, Easing.BounceIn);
+                    await counterLabel.TranslateTo(0, 0, 1000, Easing.Linear);
                 }
                 else
                 {
-                    counterLabel.Text = score.ToString();
+                    
                     resultLabel.Text = "Incorrect";
                     resultLabel.TextColor = Color.Red;
                 }
@@ -164,19 +205,87 @@ namespace ApiXD
 
         }
 
+        async void incScore()
+        {
+            Console.WriteLine(masterLogged);
+            if(masterLogged == true)
+            {
+            await firebaseHelper.UpdatePerson(usernameLabel.Text, score, masterPass);
+            //await DisplayAlert("Success", "Person Updated Successfully", "OK");
+            }
+        }
+
+        async void leaderboardButton(object sender, EventArgs e)
+        {
+            var newPage = new leaderboard();
+            await Navigation.PushModalAsync(newPage);
+        }
+
+
+        async void loginButton(object sender, EventArgs e)
+        {
+            loadpage();
+        }
+        async void loadpage()
+        {
+            
+            var newPage = new Page1();
+            await Navigation.PushModalAsync(newPage);
+
+        }
+
         private void deuterchecked(object sender, EventArgs e)
         {
+
             if(deuter == true)
             {
                 deuter = false;
+                counterLabel.TextColor = Color.Lime;
             }
             else
             {
                 deuter = true;
+                counterLabel.TextColor = Color.Cyan;
+                
             }
         }
 
-        private void nextQuestion()
+        private void protachecked(object sender, EventArgs e)
+        {
+
+            if (prot == true)
+            {
+                prot = false;
+                callBTN.BackgroundColor = Color.Red;
+                callBTN.TextColor = Color.White;
+            }
+            else
+            {
+                prot = true;
+                callBTN.BackgroundColor = Color.Cyan;
+                callBTN.TextColor = Color.Black;
+            }
+        }
+
+        private void tritchecked(object sender, EventArgs e)
+        {
+
+            if (trit == true)
+            {
+                trit = false;
+            }
+            else
+            {
+                trit = true;
+            }
+        }
+
+        public void setUser(string username)
+        {
+            usernameLabel.Text = username;
+        }
+
+        async void nextQuestion()
         {
             if (count == 0)
             {
@@ -243,14 +352,25 @@ namespace ApiXD
 
         }
 
-        private void callBTNClicked(object sender, EventArgs e)
+        async void callBTNClicked(object sender, EventArgs e)
         {
             nextQuestion();
         }
 
-        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        async void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void logoutButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+            await Navigation.PushModalAsync(new MainPage("", false, "", 0));
         }
     }
 }

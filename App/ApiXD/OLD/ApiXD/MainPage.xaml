@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ApiXD.MainPage" BackgroundColor="White">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+       
+
+        <StackLayout HorizontalOptions="Center" Padding="20">
+
+            <Label Text=""
+               x:Name="responselabel"
+               TextColor="Black"
+               BackgroundColor="White"
+               FontSize="30"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="StartAndExpand"
+               
+               ></Label>
+
+        </StackLayout>
+
+
+        <Button Text=""
+                x:Name="btnOne"
+                Clicked="btnOneClicked"
+                BackgroundColor="White"
+                BorderWidth="2"
+                BorderColor="Black"
+                ></Button>
+
+        <Button Text=""
+                x:Name="btnTwo"
+                Clicked="btnTwoClicked"
+                BackgroundColor="White"
+                BorderWidth="2"
+                BorderColor="Black"
+                ></Button>
+
+        <Button Text="Next Question"
+                x:Name="callBTN"
+                Clicked="callBTNClicked"
+                BackgroundColor="Red"
+                TextColor="White"
+                ></Button>
+
+        <StackLayout HorizontalOptions="Center">
+            <Label Text=""
+               x:Name="resultLabel"
+               FontSize="20"
+               HorizontalTextAlignment="Center"
+               ></Label>
+        </StackLayout>
+
+
+        <StackLayout x:Name="cboptions">
+
+            <Label
+                
+                Text="Deuteranomaly"
+                
+                >
+
+            </Label>
+            <CheckBox
+                
+                CheckedChanged="deuterchecked"
+                
+                ></CheckBox>
+
+        </StackLayout>
+
+        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+
+            <Label Text="0"
+                   x:Name="counterLabel"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="EndAndExpand"
+                   >
+
+            </Label>
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

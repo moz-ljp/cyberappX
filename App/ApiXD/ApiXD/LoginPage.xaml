@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ApiXD.Page1" BackgroundColor="#3d3a3c" >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                    <Image x:Name="imgBanner" Source="banner.png" ></Image>
+                    <Image Margin="0,0,0,10" HeightRequest="100" Source="firebase.png" ></Image>
+                    <Label Margin="0,0,0,10" Text="iCyber Login" FontAttributes="Bold" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" ></Label>
+                    <!--<Entry x:Name="txtId" Placeholder="ID"></Entry>-->
+                    <Entry x:Name="txtName" Placeholder="Enter Name" TextColor="White"></Entry>
+                    <Entry x:Name="password" Placeholder="Password" IsPassword="True" TextColor="White"></Entry>
+                    <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button x:Name="btnAdd" WidthRequest="150" Text="Create" Clicked="BtnAdd_Clicked"/>
+                        <Button x:Name="btnRetrive" WidthRequest="150" Text="Login" Clicked="BtnRetrieve_Clicked"/>
+                    </StackLayout>
+
+                    <Button
+                        
+                        x:Name="backBTN"
+                        Text="Back"
+                        Clicked="backBTN_Clicked"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        
+                    ></Button>
+                    <!--
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button x:Name="btnUpdate" WidthRequest="200" Text="Update" Clicked="BtnUpdate_Clicked" />
+                        <Button x:Name="btnDelete" WidthRequest="200" Text="Delete" Clicked="BtnDelete_Clicked" />
+                    </StackLayout>
+                    -->
+                    <!--
+                    <ListView x:Name="lstPersons">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Name}"></TextCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    -->
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
